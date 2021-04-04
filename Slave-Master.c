@@ -7,18 +7,18 @@
 #define N 20000
 int main(int argc, char* argv[])
 {
-    int myid,numprocs; //再次定义进程id以及进程个数
-    int namelen,numsend,numrec;//定义进程的名字
-    int i,j,l,k;//定义循环所用变量
-    int outcome;//定义用来测试的变量
+    int myid,numprocs;
+    int namelen,numsend,numrec;
+    int i,j,l,k;
+    int outcome;
     double start, stop;
     double test;
     double temp=0;
     double mode=0;
-    int row_num;//每次分配到子进程内的
-    double *vec = NULL;//相乘的向量
-    double *matrix_=NULL;//定义的子矩阵
-    double *result=NULL;//定义每个进程的结果汇合矩阵
+    int row_num;
+    double *vec = NULL;
+    double *matrix_=NULL;
+    double *result=NULL;
     double *buffer = NULL;
     long double *scale = NULL;
     
@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
     MPI_Init(&argc,&argv);
     MPI_Comm_rank(MPI_COMM_WORLD,&myid);
     MPI_Comm_size(MPI_COMM_WORLD,&numprocs);
-    //三个函数的初始化
+
     row_num = N/(numprocs-1);
     vec=malloc(N*sizeof(double));
     matrix_=malloc(N*N*sizeof(double));
@@ -44,13 +44,13 @@ int main(int argc, char* argv[])
         ans[i]=0;
     for(i=0;i<N;i++)
         result[i]=0;
-    //首先，若只有一个线程，我们直接退出
+
     if (numprocs<=1)
     {
         MPI_Finalize();
         return 0;
     }
-    //主进程负责：1，对矩阵和向量分别赋值，并且将其发送给其他的从进程。2，接收子进程的结果并且整合到最终的结果中。
+
     if (myid == 0)
     {
         start = MPI_Wtime();
@@ -176,7 +176,7 @@ int main(int argc, char* argv[])
             printf("The scaled vector %Lf\n",result_scaling[k]);
         }
         stop = MPI_Wtime();
-        //计算时间
+
         printf("%lf\n",stop-start);
         free(result);
         free(vec);

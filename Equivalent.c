@@ -96,7 +96,7 @@ int main()
     }
     else
     {
-        //聚集
+
         MPI_Gather
             (
             result,
@@ -113,7 +113,7 @@ int main()
    
     MPI_Barrier(MPI_COMM_WORLD);
 
-    //0号进程负责输出和计算剩余行数
+   
     if(myid==0)
     {
         if (row_num2>0)
@@ -152,10 +152,10 @@ int main()
     MPI_Barrier(MPI_COMM_WORLD);
     if(myid==0)
     {
-        //先开辟存储空间
+        
         result_scaling=malloc(N*sizeof(double));
 
-        //聚集
+        
         MPI_Gather
             (
             result2,

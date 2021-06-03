@@ -35,6 +35,7 @@ double Initial()
     return temp;
 }
 // Initialization
+//The statistical variables
 double D_Engergy1(int Flap,double *S)
 {
     int sum1=0;
@@ -181,7 +182,7 @@ int main()
     S_new=new double(N);
     double *M_data;
     M_data = new double(360);
-    for (m=0; m<60; m++)//温度
+    for (m=0; m<60; m++)//Changing temperature or the value of J_2
     {
         Tot_E = 0;
         magnet=0;
@@ -190,7 +191,7 @@ int main()
         J_2 =-0.4;
         temp=(m+1)*fabs(J_1)*0.1;
         //temp=0.05;
-        beta = 1/temp;//定义温度
+        beta = 1/temp;
         CV=0;
         H2=0;
         H1=0;

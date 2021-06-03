@@ -1,4 +1,7 @@
-# Applying-MPI-to-solve-the-multiplication-of-random-matrix-and-vector
+# This is the take-home project of the curriculum: Advanced Computational Physics.
+
+The main projects consist of: 
+## Applying-MPI-to-solve-the-multiplication-of-random-matrix-and-vector
 Two modes:  
 Master and Slave modes.  
 Equivalent modes.

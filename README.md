@@ -9,6 +9,10 @@ curriculum
 ## Monte Carlo method to a special kind of 1D Ising model
 This program aims to apply simple Monte Carlo method to solve a special kind of Ising model with the ext-nearest-neighbor interactions. The traditional Ising model only consists of the nearest neighbor interactions, and it can be dividied into 2 types: ferromagnetic model and antiferromagnetic model. In the program, you can set J_2 = 0 to realize the general ferromagnetic model and antiferromagnetic models. Changing J_2, you will see a critical point in very low temperature (nearly zero), which is a special property not shown in 1D Ising models.
 ![image](https://github.com/Chan-Li/RNN-SAS/blob/main/%E6%88%AA%E5%B1%8F2021-06-03%20%E4%B8%8B%E5%8D%888.07.30.png)
+## The shooting method
+Applying the shooting method to solve the single electron Schrodinger equation in one-dimensional double well V (x) = - x ^ 2 + x ^ {4} / 20. The turning point is X_ m=2. The lowest three eigenvalues and normalized wave function are obtained by ergodic method. The physical constants are all 1.
+
+
 # Requirements
 C++ Language
 # Citation
